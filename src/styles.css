@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.bg-light-blue {
+  background: #eef2f6;
+}
+
+/* Make the scrollbar narrower */
+::-webkit-scrollbar {
+  width: 4px; /* Set a smaller width for the scrollbar */
+}
+
+::-webkit-scrollbar:hover {
+  width: 7px; /* Set a smaller width for the scrollbar */
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Track on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Track piece */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Track piece on hover */
+::-webkit-scrollbar-track:hover {
+  background: #ddd;
+}
