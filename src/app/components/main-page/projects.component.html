@@ -7,7 +7,8 @@
         <app-carousel (selectedProjectEmitter)="changeProject($event)"></app-carousel>
     </mat-card>
     <div class="row col-md-10 mx-auto">
-        <mat-card *ngIf="mobileIsShown"
+        <mat-card *ngIf="(selectedProject.type == ProjectType.MULTIPLATFORM
+                                       || selectedProject.type == ProjectType.MOBILE) && mobileIsShown"
                   class="w-auto my-3 my-md-auto mx-auto p-1 shadow-lg rounded-5 bg-black border-black border-4">
             <div class="absolute h-4 w-4 bg-black top-3 rounded-5 z-40" style="right: 48.5%;"></div>
             <div class="absolute h-12 w-2 bg-black rounded-2" style="right: -2.5%;top: 10%;"></div>
@@ -55,7 +56,9 @@
                     </button>
                 </div>
                 <div class="col-md-8 my-3 mx-auto">
-                    <mat-card [@expandCollapse]="webIsShown ? 'open' : 'closed'" class="rounded-4 bg-black">
+                    <mat-card *ngIf="selectedProject.type == ProjectType.MULTIPLATFORM
+                                       || selectedProject.type == ProjectType.WEB"
+                              [@expandCollapse]="webIsShown ? 'open' : 'closed'" class="rounded-4 bg-black">
                         <video id="video-web" controls autoPlay muted [loop]="true"
                                class="rounded-4 overflow-hidden " style="aspect-ratio: 28/13;">
                             <source type="video/mp4"
