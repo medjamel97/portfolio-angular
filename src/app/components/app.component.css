@@ -1,33 +1,27 @@
 .page-height {
-  height: 100vh;
+    height: 100vh;
 }
 
 .sidebar {
-  width: 6rem;
-}
-
-@media (min-width: 768px) {
-  .sidebar {
-    width: 17rem;
-  }
+    width: 6rem;
 }
 
 .custom-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
 }
 
 .bg-custom-dark {
-  background: #313134;
+    background: #313134;
 }
 
 .active-link {
-  background-color: lightgrey;
-  color: black;
+    background-color: lightgrey;
+    color: black;
 }
 
 .inactive-link {
-  color: white;
+    color: white;
 }

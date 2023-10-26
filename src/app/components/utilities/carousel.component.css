@@ -1,0 +1,51 @@
+/* Add this to your carousel.component.css or your global styles (styles.css) */
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    flex: 0 0 33.33%;
+}
+
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    border: 1px solid #ccc;
+    margin: 4px;
+    border-radius: 8px;
+}
+
+.carousel-item img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.carousel h2 {
+    margin-top: 8px;
+}
+
+/* Previous and Next buttons */
+.mat-icon-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mat-icon-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

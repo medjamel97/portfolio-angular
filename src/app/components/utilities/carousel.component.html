@@ -1,0 +1,24 @@
+<div class="carousel">
+    <div class="carousel-container col-md-8 d-flex"
+         *ngFor="let project of visibleProjects;let index = index"
+         [@slideAnimation]="animationDirection">
+        <mat-card *ngIf="project.type != ProjectType.UNDEFINED" class="shadow py-1 px-3 mx-auto my-2"
+                  (click)="handleTap(index)"
+                  [@sizeAnimation]="index === 2 ? 'bigger' : 'normal'">
+            <img [ngSrc]="project.logoUrl" alt="Project Logo"
+                 class="object-fit-cover mx-auto"
+                 height="100" width="100">
+            <h2 class="m-auto">{{ project.title }}</h2>
+        </mat-card>
+    </div>
+    <button *ngIf="!isFirstIndex" mat-icon-button
+            class="position-absolute start-0 bg-opacity-50 bg-black text-white ms-2" style="margin-top: 3rem"
+            (click)="navigate(false)">
+        <mat-icon>navigate_before</mat-icon>
+    </button>
+    <button *ngIf="!isLastIndex" mat-icon-button
+            class="position-absolute end-0 bg-opacity-50 bg-black text-white me-2" style="margin-top: 3rem"
+            (click)="navigate(true)">
+        <mat-icon>navigate_next</mat-icon>
+    </button>
+</div>

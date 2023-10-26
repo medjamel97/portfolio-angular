@@ -1,0 +1,85 @@
+<section class="container">
+    <div class="p-5 my-3 shadow-lg bg-white rounded-4">
+        <div class="d-flex">
+            <mat-icon style="transform: scale(2)" class="ms-auto me-4 my-auto">route</mat-icon>
+            <h1 class="me-auto my-auto">
+                {{ "careerPath"|translate}}
+            </h1>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="d-flex mb-1">
+                    <mat-icon class="my-auto me-2">book</mat-icon>
+                    <h2 class="my-auto">{{ "education"|translate}}</h2>
+                </div>
+                <ng-container *ngFor="let formation of formations; let index = index">
+                    <div class="py-1 relative" [class.start-anim-secondary]="selectedFormationIndex === index"
+                         [class.stop-anim-secondary]="selectedFormationIndex !== index">
+                        <a (click)="setSelectedFormation(index)" class="cursor-pointer">
+                            <div [style.background-image]="'url(' + formation.imageUrl + ')'" class="h-100 rounded-4"
+                                 [style.background-size]="'cover'" [style.background-position]="'center'">
+                                <div class="h-100 custom-bg rounded-4">
+                                    <div class="d-flex">
+                                        <div class="col-md-4">
+                                            <p class="text-white pt-2 p-sm-3">
+                                                {{ formation.year }}
+                                            </p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h2 class="text-white text-center p-0 p-sm-3">{{ formation.title }}</h2>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="text-white text-end p-2 p-sm-3">{{ formation.location }}</p>
+                                        </div>
+                                    </div>
+                                    <p class="fw-light text-white text-center m-5 pt-5 lh-sm"
+                                       style="font-size: 25px"
+                                       *ngIf="selectedFormationIndex == index">
+                                        {{ formation.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex mb-1">
+                    <mat-icon class="my-auto me-2">work</mat-icon>
+                    <h2 class="my-auto">{{ "experiences"|translate}}</h2>
+                </div>
+                <ng-container *ngFor="let experience of experiences; let index = index">
+                    <div class="py-1 relative" [class.start-anim]="selectedExperienceIndex === index"
+                         [class.stop-anim]="selectedExperienceIndex !== index">
+                        <a (click)="setSelectedExperience(index)" class="cursor-pointer">
+                            <div [style.background-image]="'url(' + experience.imageUrl + ')'" class="h-100 rounded-4"
+                                 [style.background-size]="'cover'" [style.background-position]="'center'">
+                                <div class="h-100 custom-bg rounded-4">
+                                    <div class="d-flex">
+                                        <div class="col-md-4">
+                                            <p class="text-white pt-2 p-sm-3">
+                                                {{ experience.year }} <br>
+                                                {{ experience.duration }}
+                                            </p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h2 class="text-white text-center p-0 p-sm-3">{{ experience.title }}</h2>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="text-white text-end p-2 p-sm-3">{{ experience.location }}</p>
+                                        </div>
+                                    </div>
+                                    <p class="fw-light text-white text-center m-4 lh-sm"
+                                       style="font-size: 25px"
+                                       *ngIf="selectedExperienceIndex == index">
+                                        {{ experience.description }}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</section>

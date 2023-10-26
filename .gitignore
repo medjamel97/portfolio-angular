@@ -139,3 +139,5 @@ package-lock.json
 
 # Angular environment
 src/environment.ts
+
+.nx

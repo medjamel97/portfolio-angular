@@ -1,17 +1,77 @@
-<div class="bg-light">
-  <mat-toolbar class="bg-dark position-relative shadow-lg z-3">
-    <div class="w-100 d-flex">
-      <div class="text-white me-auto d-flex">
-        <a>Med. Jameleddine Bouassida</a>
-        <div class="border-start text-white-50 ms-3 ps-2">
-          <button mat-button>Projects</button>
-          <button mat-button>Skills</button>
-          <button mat-button>Experience & education</button>
-          <button mat-button>Contact me</button>
+<mat-sidenav-container [dir]="direction">
+    <mat-sidenav class="bg-dark text-center position-fixed" mode="push">
+        <mat-nav-list class="p-3">
+            <mat-card class="bg-custom-dark mb-5">
+                <a href="#about" class="m-3" (click)="toggleSidenav()">
+                    <div class="custom-link">
+                        <mat-icon>info</mat-icon>
+                        <p class="my-auto mx-2">{{"aboutMe"|translate}}</p>
+                    </div>
+                </a>
+                <a href="#projects" class="m-3" (click)="toggleSidenav()">
+                    <div class="custom-link">
+                        <mat-icon>terminal</mat-icon>
+                        <p class="my-auto mx-2">{{"projects"|translate}}</p>
+                    </div>
+                </a>
+                <a href="#career" class="m-3" (click)="toggleSidenav()">
+                    <div class="custom-link">
+                        <mat-icon>route</mat-icon>
+                        <p class="my-auto mx-2">{{"career"|translate}}</p>
+                    </div>
+                </a>
+                <a href="#skills" class="m-3" (click)="toggleSidenav()">
+                    <div class="custom-link">
+                        <mat-icon>computer</mat-icon>
+                        <p class="my-auto mx-2">{{"skills"|translate}}</p>
+                    </div>
+                </a>
+                <a href="#contact-me" class="m-3" (click)="toggleSidenav()">
+                    <div class="custom-link">
+                        <mat-icon>person</mat-icon>
+                        <p class="my-auto mx-2">{{"skills"|translate}}</p>
+                    </div>
+                </a>
+            </mat-card>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="bg-light-blue">
+        <mat-toolbar class="bg-dark fixed-top shadow z-50">
+            <div class="w-100 d-flex justify-content-between align-items-center">
+                <button mat-icon-button (click)="toggleSidenav()" class="d-block d-md-none">
+                    <mat-icon class="text-white">menu</mat-icon>
+                </button>
+                <div class="text-white d-flex me-auto">
+                    <a href="#about" class="me-lg-auto">{{"jamel"|translate}}</a>
+                    <div class="d-lg-flex d-none ms-4">
+                        <a href="#projects" mat-button class="mx-3">
+                            <mat-icon>terminal</mat-icon>
+                            {{"projects"|translate}}
+                        </a>
+                        <a href="#career" mat-button class="mx-3">
+                            <mat-icon>route</mat-icon>
+                            {{"career"|translate}}
+                        </a>
+                        <a href="#skills" mat-button class="mx-3">
+                            <mat-icon>computer</mat-icon>
+                            {{"skills"|translate}}
+                        </a>
+                        <a href="#contact-me" mat-button class="mx-3">
+                            <mat-icon>person</mat-icon>
+                            {{"contactMe"|translate}}
+                        </a>
+                    </div>
+                </div>
+                <app-language-component class="d-lg-block d-none"></app-language-component>
+            </div>
+        </mat-toolbar>
+
+        <div class="overflow-x-auto">
+            <app-about id="about"></app-about>
+            <app-projects id="projects"></app-projects>
+            <app-education id="career"></app-education>
+            <app-skills id="skills"></app-skills>
+            <app-contact-me id="contact-me"></app-contact-me>
         </div>
-      </div>
-      <app-language-component></app-language-component>
-    </div>
-  </mat-toolbar>
-  <app-about></app-about>
-</div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

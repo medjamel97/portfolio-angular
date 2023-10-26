@@ -1,0 +1,72 @@
+.custom-bg {
+    background: rgba(0, 0, 0, 0.70);
+}
+
+.start-no-anim {
+    height: 60%;
+}
+
+.stop-no-anim {
+    height: 6rem;
+}
+
+.start-anim {
+    height: 15rem;
+    animation-name: fade-out;
+    animation-duration: 500ms;
+}
+
+.stop-anim {
+    height: 6rem;
+    animation-name: fade-in;
+    animation-duration: 500ms;
+}
+
+.start-anim-secondary {
+    height: 21rem;
+    animation-name: fade-out-secondary;
+    animation-duration: 500ms;
+}
+
+.stop-anim-secondary {
+    height: 12rem;
+    animation-name: fade-in-secondary;
+    animation-duration: 500ms;
+}
+
+@keyframes fade-in {
+    0% {
+        height: 15rem
+    }
+    100% {
+        height: 6rem;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        height: 6rem;
+    }
+    100% {
+        height: 15rem
+    }
+}
+
+
+@keyframes fade-in-secondary {
+    0% {
+        height: 21rem
+    }
+    100% {
+        height: 12rem;
+    }
+}
+
+@keyframes fade-out-secondary {
+    0% {
+        height: 12rem;
+    }
+    100% {
+        height: 21rem
+    }
+}

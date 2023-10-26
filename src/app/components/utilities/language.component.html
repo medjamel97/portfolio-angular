@@ -1,44 +1,38 @@
 <ng-container>
-  <button mat-button [matMenuTriggerFor]="menu">
-    <div class="text-center text-white" fxLayoutAlign="center center">
-      <mat-icon class="me-2">language</mat-icon>
-      {{ 'language' | translate }}
-      <mat-icon class="ms-1">arrow_drop_down</mat-icon>
-    </div>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="changeLanguage('ar')">
-      <img
-        ngSrc="assets/images/flags/tn.png"
-        alt="France Flag"
-        class="object-fit-scale me-2"
-        height="300"
-        width="450"
-        style="width: 2rem; height: 2rem"
-      />
-      العربية
+    <button mat-button [matMenuTriggerFor]="menu">
+        <div class="text-center text-white" fxLayoutAlign="center center">
+            <mat-icon class="me-2">language</mat-icon>
+            {{ 'language'|translate }}
+            <mat-icon class="ms-1">arrow_drop_down</mat-icon>
+        </div>
     </button>
-    <button mat-menu-item (click)="changeLanguage('fr')">
-      <img
-        ngSrc="assets/images/flags/france.png"
-        alt="France Flag"
-        class="object-fit-scale me-2"
-        height="300"
-        width="450"
-        style="width: 2rem; height: 2rem"
-      />
-      Français
-    </button>
-    <button mat-menu-item (click)="changeLanguage('en')">
-      <img
-        ngSrc="assets/images/flags/uk.png"
-        alt="England Flag"
-        class="object-fit-scale me-2"
-        height="300"
-        width="450"
-        style="width: 2rem; height: 2rem"
-      />
-      English
-    </button>
-  </mat-menu>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="changeLanguage('fr')">
+            <img [ngSrc]="'assets/images/flags/france.png'"
+                 alt="France Flag"
+                 class="object-fit-scale me-2"
+                 height="300"
+                 width="450"
+                 style="width: 2rem; height: 2rem"/>
+            Français
+        </button>
+        <button mat-menu-item (click)="changeLanguage('en')">
+            <img [ngSrc]="'assets/images/flags/uk.png'"
+                 alt="England Flag"
+                 class="object-fit-scale me-2"
+                 height="300"
+                 width="450"
+                 style="width: 2rem; height: 2rem"/>
+            English
+        </button>
+        <button mat-menu-item (click)="changeLanguage('ar')">
+            <img [ngSrc]="'assets/images/flags/tn.png'"
+                 alt="France Flag"
+                 class="object-fit-scale me-2"
+                 height="300"
+                 width="450"
+                 style="width: 2rem; height: 2rem"/>
+            العربية
+        </button>
+    </mat-menu>
 </ng-container>

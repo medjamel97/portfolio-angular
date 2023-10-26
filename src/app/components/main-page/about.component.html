@@ -1,20 +1,52 @@
-<section id="about">
-  <div class="m-5 d-flex">
-    <div>
-      <p class="display-4">Bonjour, je suis Jamel.</p>
-      <p class="w-">
-        Je suis un étudiant en ingénierie spécialisé dans le développement
-        mobile, effectuant actuellement mon stage de fin d'études chez la
-        startup Industry X.0. Je suis passionné de l'amélioration continue et
-        prêt à relever les défis technologiques.
-      </p>
+<section class="container pt-5">
+    <div class="row mx-auto mt-5">
+        <div class="col-md-8">
+            <p class="display-4">{{"hello"|translate}}</p>
+            <p class="leading-relaxed fw-normal" style="line-height: 2; font-size: large; ">
+                {{"headline1"|translate}}<br>
+                {{"headline2"|translate}}<br>
+                {{"headline3"|translate}}
+            </p>
+        </div>
+        <div class="col-md-3 col-sm-12 m-auto">
+            <img height="250"
+                 width="250"
+                 class="object-fit-cover rounded-circle mx-sm-auto mx-auto"
+                 [ngSrc]="'assets/images/me.png'"
+                 alt="me"
+            />
+        </div>
     </div>
-    <img
-      height="250"
-      width="250"
-      class="mx-5 object-fit-cover rounded-circle"
-      ngSrc="assets/images/me.png"
-      alt="me"
-    />
-  </div>
+    <div class="row">
+        <div class="col-md-4 d-flex my-3">
+            <a href="#contact-me" mat-button class="bg-primary text-white w-50 ms-2 p-4">
+                {{"contactMe"|translate}}
+            </a>
+            <a href="#projects" mat-button class="text-dark w-50 ms-4 p-4" style="background: #e8e8ef" g>
+                {{"viewMyAchievements"|translate}}
+            </a>
+        </div>
+        <div class="col-xl-4 col-md-5 col-sm-12 d-flex my-3">
+            <a class="mx-auto" href="https://www.linkedin.com/in/jamel-bouassida-805b78194" target="_blank">
+                <img [ngSrc]="'assets/images/social-media/linkedin.png'"
+                     height="50" width="50" class="object-fit-cover" alt="Linkedin logo"/>
+            </a>
+            <a class="mx-auto" href="https://www.github.com/medjamel97" target="_blank">
+                <img [ngSrc]="'assets/images/social-media/github.png'"
+                     height="50" width="50" class="object-fit-cover" alt="Github logo"/>
+            </a>
+            <a class="mx-auto" href="https://www.facebook.com/medjamel97" target="_blank">
+                <img [ngSrc]="'assets/images/social-media/facebook.png'"
+                     height="50" width="50" class="object-fit-cover" alt="Facebook logo"/>
+            </a>
+            <a class="mx-auto" href="https://www.instagram.com/jamel.bouassida" target="_blank">
+                <img [ngSrc]="'assets/images/social-media/instagram.png'"
+                     height="50" width="50" class="object-fit-cover" alt="Instagram logo"/>
+            </a>
+            <a class="mx-auto" href="https://twitter.com/medjamel97" target="_blank">
+                <img [ngSrc]="'assets/images/social-media/twitter.png'"
+                     height="50" width="50" class="object-fit-cover" alt="Twitter logo"/>
+            </a>
+        </div>
+    </div>
 </section>

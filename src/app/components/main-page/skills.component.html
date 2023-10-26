@@ -1,0 +1,16 @@
+<section class="container py-4">
+    <div class="text-center d-flex pb-3">
+        <mat-icon class="ms-auto me-4 my-auto" style="transform: scale(1.5)">computer</mat-icon>
+        <h1 class="me-auto my-auto">
+            {{"skillsAndTechnologies"|translate}}
+        </h1>
+    </div>
+    <div class="row">
+        <div *ngFor="let skill of skills" class="col-md-3 my-3">
+            <div class="d-flex bg-blue-100 rounded title-font font-medium text-blue-500 p-2">
+                <mat-icon class="text-blue-400 ms-auto my-auto">{{skill.icon}}</mat-icon>
+                <p class="ms-2 me-auto my-auto">{{skill.name}}</p>
+            </div>
+        </div>
+    </div>
+</section>
