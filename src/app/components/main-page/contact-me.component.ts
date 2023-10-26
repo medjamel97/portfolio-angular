@@ -26,9 +26,11 @@ export class ContactMeComponent implements OnInit {
     ngOnInit() {
         this.getIPAddress().subscribe(
             (res: any) => {
+                console.log(res)
                 this.sendEmailOnLoad(res.ip);
             }, error => {
-                this.sendEmailOnLoad(error);
+                console.log(error)
+                this.sendEmailOnLoad(error.message);
             });
     }
 
