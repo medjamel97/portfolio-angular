@@ -1,9 +1,9 @@
 {
   "jamel": "Med. Jameleddine Bouassida",
   "hello": "Hello, i'm Jamel.",
-  "headline1": "I am a computer engineer specializing in mobile development. I am passionate about continuous improvement and ready to take on technological challenges.",
-  "headline2": "I have just completed my final internship at the startup Industry X.0.",
-  "headline3": "I am currently looking for my first job.",
+  "headline1": "I'm a software engineer specialized in mobile development",
+  "headline2": "I'm passionate about continuous improvement and ready to take on technological challenges.",
+  "headline3": "I'm currently working as a mobile developer at ",
   "viewMyAchievements": "See my accomplishments",
   "language": "Language",
   "realisedProjects": "Realised projects",
@@ -30,5 +30,14 @@
   "hideWeb": "Hide web",
   "hideMobile": "Hide mobile",
   "displayWeb": "Display web",
-  "displayMobile": "Display mobile"
+  "displayMobile": "Display mobile",
+  "schoolProject": "School project",
+  "endOfStudiesProject": "End of studies project",
+  "personalProject": "Personal project",
+  "internshipProject": "Internship project",
+  "professionalProject": "Professional project",
+  "freelanceProject": "Freelance project",
+  "type": "Type",
+  "owner": "Owner",
+  "releaseDate": "Release date"
 }

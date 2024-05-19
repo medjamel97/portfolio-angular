@@ -83,10 +83,3 @@ export const springBoot: Technology = {
     logoUrl: "assets/images/technologies/spring-boot.png",
     link: "https://spring.io/projects/spring-boot"
 };
-
-export const golang: Technology = {
-    name: "Go Lang",
-    color: "bg-cyan-100",
-    logoUrl: "assets/images/technologies/go.png",
-    link: "https://go.dev/"
-};

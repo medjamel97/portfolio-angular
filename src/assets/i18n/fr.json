@@ -1,9 +1,9 @@
 {
   "jamel": "Med. Jameleddine Bouassida",
   "hello": "Bonjour, je suis Jamel.",
-  "headline1": "Je suis un ingénieur en informatiqe spécialisé dans le développement mobile, Je suis passionné par l'amélioration continue et prêt à relever les défis technologiques.",
-  "headline2": "Je viens d'achever mon stage de fin d'études chez la startup Industry X.0.",
-  "headline3": "Je suis actuellement à la recherche d'un premier emploi.",
+  "headline1": "Je suis un ingénieur en informatique spécialisé en développement mobile.",
+  "headline2": "Je suis passionné par l'amélioration continue et prêt à relever les défis technologiques.",
+  "headline3": "J'occupe actuellement le poste de développeur mobile chez ",
   "viewMyAchievements": "Voir mes réalisations",
   "language": "Langue",
   "realisedProjects": "Projets réalisés",
@@ -30,5 +30,14 @@
   "hideWeb": "Masquer le Web",
   "hideMobile": "Masquer le mobile",
   "displayWeb": "Affichage web",
-  "displayMobile": "Affichage mobile"
+  "displayMobile": "Affichage mobile",
+  "schoolProject": "Projet scolaire",
+  "endOfStudiesProject": "Projet de fin d'études",
+  "personalProject": "Projet personnel",
+  "internshipProject": "Projet de stage",
+  "professionalProject": "Projet professionnel",
+  "freelanceProject": "Projet freelance",
+  "type": "Type",
+  "owner": "Propriétaire",
+  "releaseDate": "Date de sortie"
 }

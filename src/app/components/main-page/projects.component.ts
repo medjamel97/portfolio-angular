@@ -3,6 +3,7 @@ import {projects} from "../../data/projects";
 import {Project} from "../../model/project.model";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {ProjectType} from "../enums/project-type.enum";
+import {ProjectContext} from "../enums/project-context.enum";
 
 @Component({
     selector: 'app-projects',
@@ -52,4 +53,5 @@ export class ProjectsComponent {
 
     protected readonly console = console;
     protected readonly ProjectType = ProjectType;
+    protected readonly ProjectContext = ProjectContext;
 }

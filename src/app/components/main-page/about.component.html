@@ -1,11 +1,23 @@
 <section class="container pt-5">
     <div class="row mx-auto mt-5">
         <div class="col-md-8">
-            <p class="display-4">{{"hello"|translate}}</p>
+            <p class="display-4">{{ "hello"|translate }}</p>
             <p class="leading-relaxed fw-normal" style="line-height: 2; font-size: large; ">
-                {{"headline1"|translate}}<br>
-                {{"headline2"|translate}}<br>
-                {{"headline3"|translate}}
+                {{ "headline1"|translate }}<br>
+                {{ "headline2"|translate }}<br>
+                <span>{{ "headline3"|translate }}
+                    <a class="text-purple-800 ms-auto"
+                       href="https://www.linkedin.com/company/proservice-training-company">
+                    Proservice Training Company
+                    </a>
+                </span>
+                <br>
+                <a class="text-purple-800 ms-auto" href="https://www.linkedin.com/company/proservice-training-company"
+                   target="_blank">
+                    <img [ngSrc]="'assets/images/pstc.webp'"
+                         height="150" width="150" class="object-fit-cover mt-4" alt="pstc">
+                </a>
+                <br>
             </p>
         </div>
         <div class="col-md-3 col-sm-12 m-auto">
@@ -20,10 +32,10 @@
     <div class="row">
         <div class="col-md-4 d-flex my-3">
             <a href="#contact-me" mat-button class="bg-primary text-white w-50 ms-2 p-4">
-                {{"contactMe"|translate}}
+                {{ "contactMe"|translate }}
             </a>
             <a href="#projects" mat-button class="text-dark w-50 ms-4 p-4" style="background: #e8e8ef" g>
-                {{"viewMyAchievements"|translate}}
+                {{ "viewMyAchievements"|translate }}
             </a>
         </div>
         <div class="col-xl-4 col-md-5 col-sm-12 d-flex my-3">

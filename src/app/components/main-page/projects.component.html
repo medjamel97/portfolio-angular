@@ -29,9 +29,54 @@
                 <h1 class="col-md-12 text-center font-medium text-gray-500 mb-3">
                     {{ selectedProject.subtitle }}
                 </h1>
+                <div class="col-md-12">
+                    <div class="d-flex">
+                        <p class="text-gray-700 my-2 mx-auto">
+                            <span class="text-black fw-bold my-2 mx-auto">
+                                {{ "type"|translate }} :
+                            </span>
+                            <span [ngSwitch]="selectedProject.context">
+                                <span *ngSwitchCase="ProjectContext.SCHOOL">
+                                    {{ "schoolProject"|translate }}
+                                </span>
+                                <span *ngSwitchCase="ProjectContext.END_OF_STUDIES">
+                                    {{ "endOfStudiesProject"|translate }}
+                                </span>
+                                <span *ngSwitchCase="ProjectContext.PERSONAL">
+                                    {{ "personalProject"|translate }}
+                                </span>
+                                <span *ngSwitchCase="ProjectContext.INTERNSHIP">
+                                    {{ "internshipProject"|translate }}
+                                </span>
+                                <span *ngSwitchCase="ProjectContext.PROFESSIONAL">
+                                    {{ "professionalProject"|translate }}
+                                </span>
+                                <span *ngSwitchCase="ProjectContext.FREELANCE">
+                                    {{ "freelanceProject"|translate }}
+                                </span>
+                            </span>
+                        </p>
+                        <p class="text-gray-700 my-2 mx-auto">
+                            <span class="text-black fw-bold my-2 mx-auto">
+                                {{ "owner"|translate }} :
+                            </span>
+                            <span>
+                                {{ selectedProject.owner }}
+                            </span>
+                        </p>
+                        <p class="text-gray-700 my-2 mx-auto">
+                            <span class="text-black fw-bold my-2 mx-auto">
+                                {{ "releaseDate"|translate }} :
+                            </span>
+                            <span>
+                            {{ selectedProject.releaseDate }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
                 <div class="d-flex col-md-6 mx-auto bg-gray-100 rounded-5 p-1">
-                    <button *ngIf="selectedProject.type == ProjectType.MULTIPLATFORM
-                                       || selectedProject.type == ProjectType.MOBILE"
+                    <button *ngIf="(selectedProject.type == ProjectType.MULTIPLATFORM
+                                       || selectedProject.type == ProjectType.MOBILE) && selectedProject.videoUrl"
                             mat-button style="width: 10rem"
                             class="mx-auto py-4 bg-primary text-white rounded-4"
                             (click)="toggleShowMobile()"
@@ -74,13 +119,13 @@
                  class="col-md-12 bg-gray-100 rounded-4 mx-auto">
                 <div class="p-3">
                     <p class="title-font fw-bold text-black my-2">
-                        {{"description"|translate}} :
+                        {{ "description"|translate }} :
                     </p>
                     <p class="text-gray-700 my-2">
                         {{ selectedProject.description }}
                     </p>
                     <p class="fw-bold my-2">
-                        {{"sourceCode"|translate}} :
+                        {{ "sourceCode"|translate }} :
                     </p>
                     <p class="text-gray-700 my-2">
                         <ng-container *ngIf="selectedProject.sourceCodeUrl; else link">
@@ -91,17 +136,40 @@
                             <p>{{ "sourceCodeIsPrivate"|translate }}</p>
                         </ng-template>
                     </p>
+                    <p *ngIf="selectedProject.sourceCodeIOSUrl" class="fw-bold my-2">
+                        {{ "sourceCode"|translate }} iOS :
+                    </p>
+                    <p *ngIf="selectedProject.sourceCodeIOSUrl" class="text-gray-700 my-2">
+                        <ng-container>
+                            <a class="link-info"
+                               [href]="selectedProject.sourceCodeIOSUrl">{{ selectedProject.sourceCodeIOSUrl }}</a>
+                        </ng-container>
+                    </p>
+                    <p *ngIf="selectedProject.sourceCodeBackendUrl" class="fw-bold my-2">
+                        {{ "sourceCode"|translate }} backend :
+                    </p>
+                    <p *ngIf="selectedProject.sourceCodeBackendUrl" class="text-gray-700 my-2">
+                        <ng-container>
+                            <a class="link-info"
+                               [href]="selectedProject.sourceCodeBackendUrl">{{ selectedProject.sourceCodeBackendUrl }}</a>
+                        </ng-container>
+                    </p>
                     <p class="title-font fw-bold text-black my-2">
-                        {{"platform"|translate}} :
+                        {{ "platform"|translate }} :
                     </p>
                     <p class="title-font font-normal text-gray-700 mt-2">
                         <span>{{ selectedProject.platforms }}</span>
                     </p>
+                    <a *ngIf="selectedProject.playStoreUrl != null" href="{{selectedProject.playStoreUrl}}"
+                       class="ms-auto" target="_blank">
+                        <img [ngSrc]="'assets/images/play_store.png'" width="150" height="150"
+                             class="object-cover" alt="playstore">
+                    </a>
                 </div>
             </div>
             <div class="text-center font-medium text-black my-1">
                 <div class="row mx-auto">
-                    <h4>{{"usedTechnologies"|translate}} :</h4>
+                    <h4>{{ "usedTechnologies"|translate }} :</h4>
                 </div>
                 <div class="col-md-12 cursor-pointer">
                     <div class="d-flex w-75 mx-auto">

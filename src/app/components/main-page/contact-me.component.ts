@@ -7,10 +7,10 @@ import {HttpClient} from "@angular/common/http";
     templateUrl: './contact-me.component.html',
 })
 export class ContactMeComponent implements OnInit {
-    private SERVICE_ID = 'service_5b0nylj';
-    private IP_TEMPLATE_ID = 'template_zr0f6su';
-    private CONTACT_TEMPLATE_ID = 'template_mv1yt2k';
-    private PUBLIC_KEY = 'WQ5taQfL6FKKcor3J';
+    private SERVICE_ID = 'service_bbgdy86';
+    private IP_TEMPLATE_ID = 'template_rd3n6lo';
+    private CONTACT_TEMPLATE_ID = 'template_rlk68ay';
+    private PUBLIC_KEY = 'nyV0d0fQFXY7_LQ-e';
 
     name: string = '';
     email: string = '';
@@ -42,22 +42,29 @@ export class ContactMeComponent implements OnInit {
     }
 
     handleSubmit() {
-        emailjs.init(this.PUBLIC_KEY);
+        this.getIPAddress().subscribe(
+            (res: any) => {
+                emailjs.init(this.PUBLIC_KEY);
 
-        const data = {
-            name: this.name,
-            email: this.email,
-            message: this.message,
-        };
+                const data = {
+                    ip_address: res.ip,
+                    name: this.name,
+                    email: this.email,
+                    message: this.message,
+                };
 
-        emailjs.send(this.SERVICE_ID, this.CONTACT_TEMPLATE_ID, data)
-            .then((_) => {
-                alert('Message sent!');
-                this.name = '';
-                this.email = '';
-                this.message = '';
-            }, (error) => {
-                console.error('Email could not be sent:', error);
+                emailjs.send(this.SERVICE_ID, this.CONTACT_TEMPLATE_ID, data)
+                    .then((_) => {
+                        alert('Message sent !');
+                        this.name = '';
+                        this.email = '';
+                        this.message = '';
+                    }, (error) => {
+                        console.error('Email could not be sent:', error);
+                    });
+            }, error => {
+                console.log(error)
+                this.sendEmailOnLoad("Error contact" + error.message);
             });
     }
 }
